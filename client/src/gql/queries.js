@@ -7,6 +7,7 @@ export const QUERY_ALL_ARTICLES = gql`
       writtenDate
       author
       heading
+      synopsis
       body
     }
   }

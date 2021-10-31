@@ -15,6 +15,10 @@ const articleSchema = new Schema({
         type: String,
         required: true
     },
+    synopsis: {
+        type: String,
+        required: true
+    },
     body: {
         type: String,
         required: true

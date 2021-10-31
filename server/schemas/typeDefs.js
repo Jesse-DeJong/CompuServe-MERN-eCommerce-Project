@@ -42,6 +42,7 @@ const typeDefs = gql`
     writtenDate: String
     author: String
     heading: String
+    synopsis: String
     body: String
   }
 

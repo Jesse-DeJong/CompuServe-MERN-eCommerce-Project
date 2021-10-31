@@ -30,7 +30,7 @@ function Articles() {
             });
         }
     }, [data, loading, dispatch]);
-
+console.log(data)
     return (
         <div className="card px-1 py-1">
         <h2>Articles</h2>
@@ -41,6 +41,7 @@ function Articles() {
                     date={article.writtenDate}
                     author={article.author}
                     heading={article.heading}
+                    synopsis={article.synopsis}
                     body={article.body}
                     />
                 ))}

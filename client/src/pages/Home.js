@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Articles from '../components/Articles/index';
 
 const Home = () => {
   return (
@@ -15,16 +16,7 @@ const Home = () => {
         <h2>Dive Deeper...</h2>
         <p>We'd recommend reading some of these articles if you'd like a better understanding of some of the features and technologies available today to help decide which are worth the investment cost for you.</p>
     </div>
-        <ul>
-            <li>Ray Tracing / AMD thing</li>
-            <li>HDR - High Dynamic Range</li>
-            <li>Variable Refresh Rate (Freesync/G-Sync)</li>
-            <li>Resolution</li>
-            <li>FPS / Framerate</li>
-            <li>Monitor Panel Type</li>
-            <li>Form Factor</li>
-            <li>Liquid vs Air Cooling</li>
-        </ul>
+        <Articles />
     </div>
   );
 };
