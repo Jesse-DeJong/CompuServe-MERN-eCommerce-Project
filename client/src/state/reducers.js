@@ -65,7 +65,7 @@ const addMultipleToCart = ({ state, action }) => {
 const updateCategories = ({ state, action }) => {
   return {
     ...state,
-    categories: [...action.currentCategory]
+    categories: [...action.categories]
   }
 };
 

@@ -1,13 +1,15 @@
 import React from "react";
-
-import { Container } from "../components/Container";
-import { H2 } from '../components/Text';
+import ProductList from "../components/ProductList";
+import CategoryMenu from "../components/CategoryMenu";
+import Cart from "../components/Cart";
 
 const Home = () => {
   return (
-    <Container alignContent="center">
-      <H2>Hello world</H2>
-    </Container>
+    <div className="container">
+      <CategoryMenu />
+      <ProductList />
+      <Cart />
+    </div>
   );
 };
 

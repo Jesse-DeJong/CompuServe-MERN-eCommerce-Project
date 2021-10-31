@@ -37,7 +37,7 @@ db.once('open', async () => {
       name: 'PCCG Ghost 3060 Ti Gaming System',
       description:
         'AMD Ryzen 5 5600X CPU with Wraith Stealth, ASUS Prime B550M-K Motherboard, ASUS GeForce RTX 3060 Ti Dual Mini OC LHR GB graphics card, 16GB PNY XLR8 Gaming Epic-X RGB 3600MHz memory, 512GB Team MP34 M.2 NVMe SSD, 2TB Seagate Barracuda hard drive, Lian Li Lancool 215 Mesh A-RGB Case Black, Windows 10. Backed by a 2 year return to base warranty with all shipping costs included (upgradeable to 3 years).',
-      image: '1650.jpg',
+      image: '3060.jpg',
       category: categories[2]._id,
       price: 2899,
       quantity: 500
