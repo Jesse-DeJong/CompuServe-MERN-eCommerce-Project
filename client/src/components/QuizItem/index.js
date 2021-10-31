@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ResCard from './ResCard';
 
 function QuizItem({
     setResponse,
@@ -20,7 +21,7 @@ function QuizItem({
             return (
                 <>
                 <h2>Budget: How much are you looking to spend?</h2>
-                <label for="budget">$</label>
+                <label htmlFor="budget">$</label>
                 <input
                 value={response}
                 name="budget"
@@ -31,31 +32,30 @@ function QuizItem({
                 </>
             );
         case 1:
+            const radioOptions = {
+                a: {
+                    name: 'Standard',
+                    img: '/images/1920-1080.png'
+                },
+                b: {
+                    name: 'Ultrawide',
+                    img: '/images/3440-1440.png'
+                },
+                c: {
+                    name: '4K',
+                    img: '/images/3840-2160.png'
+                },
+                active: {
+                    name: 'Standard',
+                    img: '/images/1920-1080.png'
+                }
+            };
+
             return (
                 <>
                 <h2>At what resolution will you be gaming?</h2>
-                <div>
-                <input
-                value="Ultrawide"
-                name="resolution"
-                onChange={handleInputChange}
-                type="radio"
-                placeholder="3440x1440"
-                /> Ultrawide
-                                <input
-                value="Standard"
-                name="resolution"
-                onChange={handleInputChange}
-                type="radio"
-                placeholder="1920x1080"
-                /> Standard
-                                <input
-                value="4K"
-                name="resolution"
-                onChange={handleInputChange}
-                type="radio"
-                placeholder="3840x2160"
-                /> 4K
+                <div className="container-fluid d-flex">
+                    <ResCard props={radioOptions} />
                 </div>
                 </>
             );
