@@ -10,7 +10,8 @@ import {
   CLEAR_CART,
   TOGGLE_CART,
   TOGGLE_THEME,
-  CHANGE_GREETING
+  CHANGE_GREETING,
+  UPDATE_ALL_ARTICLES
 } from './actions';
 
 const updateProducts = ({ state, action }) => {
@@ -105,6 +106,14 @@ const changeGreetingReducer = ({ state, action }) => {
   }
 };
 
+const updateAllArticles = ({ state, action }) => {
+  return {
+    ...state,
+    articles: [...action.articles]
+  }
+};
+
+
 const ACTION_MAP = {
   [UPDATE_PRODUCTS]: updateProducts,
   [ADD_TO_CART]: addToCart,
@@ -117,7 +126,9 @@ const ACTION_MAP = {
   [TOGGLE_CART]: toggleCart,
 
   [TOGGLE_THEME]: toggleThemeReducer,
-  [CHANGE_GREETING]: changeGreetingReducer
+  [CHANGE_GREETING]: changeGreetingReducer,
+
+  [UPDATE_ALL_ARTICLES]: updateAllArticles
 };
 
 export const reducer = (state, action) => ACTION_MAP[action.type]({ state, action });

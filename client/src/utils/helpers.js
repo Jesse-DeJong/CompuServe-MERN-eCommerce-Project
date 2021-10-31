@@ -14,6 +14,7 @@ export function pluralize(name, count) {
         db.createObjectStore('products', { keyPath: '_id' });
         db.createObjectStore('categories', { keyPath: '_id' });
         db.createObjectStore('cart', { keyPath: '_id' });
+        db.createObjectStore('articles', { keyPath: '_id' });
       };
   
       request.onerror = function(e) {

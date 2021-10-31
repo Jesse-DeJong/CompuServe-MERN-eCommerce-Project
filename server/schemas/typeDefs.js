@@ -37,6 +37,14 @@ const typeDefs = gql`
     session: ID
   }
 
+  type Article {
+    _id: ID
+    writtenDate: String
+    author: String
+    heading: String
+    body: String
+  }
+
   type Query {
     categories: [Category]
     products(category: ID, name: String): [Product]
@@ -44,6 +52,7 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
+    articles: [Article]
   }
 
   type Mutation {

@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Category, Product } = require('../models');
+const { User, Category, Product, Article } = require('../models');
 
 db.once('open', async () => {
   await Category.deleteMany();
@@ -45,6 +45,28 @@ db.once('open', async () => {
   ])
 
   console.log('Products Seeded');
+
+  await Article.deleteMany();
+
+  await Article.insertMany([
+    {
+      author: 'Bigfoot',
+      heading: 'Ray Tracing',
+      body: 'Nvidia all the way for raytracing blah blah'
+    },
+    {
+      author: 'Pythagorus',
+      heading: 'HDR - High Dynamic Range',
+      body: 'Is it worth? probably not, also its expensive and usually poorly executed'
+    },
+    {
+      author: 'Foobar',
+      heading: 'Variable Refresh Rate',
+      body: 'Step out of the dark ages friend, VRR is here to save the day'
+    }
+  ])
+
+  console.log('Articles Seeded');
 
   await User.deleteMany();
 

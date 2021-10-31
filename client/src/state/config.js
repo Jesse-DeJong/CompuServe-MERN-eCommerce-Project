@@ -5,7 +5,8 @@ const initialState = {
   categories: [],
   currentCategory: '',
   theme: 'light',
-  greeting: 'hello'
+  greeting: 'hello',
+  articles: []
 };
 
 export {

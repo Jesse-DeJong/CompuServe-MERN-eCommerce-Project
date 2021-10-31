@@ -36,6 +36,9 @@ function Nav() {
           <li className="nav-item">
             <Link className="nav-link" aria-current="Order History" to="/orderHistory">Order History</Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" aria-current="Articles" to="/articles">Articles</Link>
+          </li>
         </ul>
         <form className="d-flex justify-content-end">
           <button className="btn btn-outline-danger" type="submit" onClick={() => Auth.logout()} style={styles.button}>Logout</button>
