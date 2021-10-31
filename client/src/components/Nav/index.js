@@ -6,63 +6,57 @@ function Nav() {
 
   function showNavigation() {
     if (Auth.loggedIn()) {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/">
-              Home
-            </Link>
+      return ( <>
+
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-item">
+            <Link className="nav-link" aria-current="Home" to="/">Home</Link>
           </li>
-          <li className="mx-1">
-            <Link to="/products">
-              Products
-            </Link>
+          <li className="nav-item">
+            <Link className="nav-link" aria-current="Products" to="/products">Products</Link>
           </li>
-          <li className="mx-1">
-            <Link to="/orderHistory">
-              Order History
-            </Link>
-          </li>
-          <li className="mx-1">
-            {/* logout and then refresh the application to the start */}
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
-            </a>
+          <li className="nav-item">
+            <Link className="nav-link" aria-current="Order History" to="/orderHistory">Order History</Link>
           </li>
         </ul>
+        <form className="d-flex justify-content-end">
+          <button className="btn btn-outline-danger" type="submit" onClick={() => Auth.logout()}>Logout</button>
+        </form>
+      
+      </>
       );
     } else {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/signup">
-              Signup
-            </Link>
+      return ( <>
+
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-item">
+            <Link className="nav-link" aria-current="Home" to="/">Home</Link>
           </li>
-          <li className="mx-1">
-            <Link to="/login">
-              Login
-            </Link>
+          <li className="nav-item">
+            <Link className="nav-link" aria-current="Products" to="/products">Products</Link>
           </li>
         </ul>
+        <form className="d-flex justify-content-end">
+          <Link to="/signup"><button className="btn btn-outline-info" type="submit">Sign Up</button></Link>
+          <Link to="/login"><button className="btn btn-outline-success" type="submit">Login</button></Link>
+        </form>
+      
+      </>
       );
     }
   }
 
-  return (
-    <header className="flex-row px-1">
-      <h1>
-        <Link to="/">
-          <span role="img" aria-label="shopping bag">🛍️</span>
-          StoreTitle
-        </Link>
-      </h1>
-
-      <nav>
-        {showNavigation()}
-      </nav>
-    </header>
+  return ( <>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">StoreTitle</Link>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          {showNavigation()}
+        </div>
+      </div>
+    </nav>
+  </>
   );
-}
+};
 
 export default Nav;

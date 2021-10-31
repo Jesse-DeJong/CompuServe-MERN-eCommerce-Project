@@ -110,10 +110,7 @@ function QuizItem({
                 </div>
                 </>
             );
-        case 5: 
-            return 
     }
-
 }
 
 export default QuizItem;
