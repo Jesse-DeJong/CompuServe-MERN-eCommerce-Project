@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ComparisonSlider from './ComparisonSlider';
 import ResCard from './ResCard';
 
 function QuizItem({
@@ -98,6 +99,19 @@ function QuizItem({
                 </div>
                 </>
             );
+        case 4:
+            
+            return (
+                <>
+                <h2>Are you interested in Ray Tracing?</h2>
+                <div className="container-fluid d-flex">
+                    <p>Ray-tracing is a relatively recently developed approach to calculating lighting and shadows, leveraging specalised hardware to calculate realistic light paths in the same way light bounces in real life. Value here is subjective and does not come without strings as only a handful of games support even a limited implementation of what this technology is capable of at this time, however given its inclusion in the recent generation of consoles on both PS5 and XBOX as well as a strong community reception it is highly likely that compatibility will expand significantly in the coming years as capable hardware becomes increasingly available and developers have time to work with the software implementation.</p>
+                    <ComparisonSlider  />
+                </div>
+                </>
+            );
+        case 5: 
+            return 
     }
 
 }
