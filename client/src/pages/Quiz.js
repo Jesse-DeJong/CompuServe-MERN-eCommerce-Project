@@ -30,7 +30,22 @@ if (count === 0) {
         resolution: response
     }
     setResponse('');
+}   else if (count === 2) {
+    setCount((count + 1));
+    initialState = {
+        ...initialState,
+        fps: response
+    }
+    setResponse('');
+}   else if (count === 3) {
+    setCount((count + 1));
+    initialState = {
+        ...initialState,
+        features: [...response]
+    }
+    setResponse('');
 }
+
 
 };
 
@@ -40,7 +55,7 @@ if (count === 0) {
         <p>
             count: <span>{count}</span>
         </p>
-        
+
         <QuizItem response={response} setResponse={setResponse} count={count} />
 
         <button type="button" onClick={handleFormSubmit}>

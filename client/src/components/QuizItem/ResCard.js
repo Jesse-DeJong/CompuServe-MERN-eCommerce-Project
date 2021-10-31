@@ -10,12 +10,6 @@ function ResCard({
         card: {
             width: "500px"
         },
-        label: {
-            alignSelf: "center" 
-        },
-        input: {
-            margin: "0px 5px"
-        }
     };
     
     const handleRadioToggle = (e) => {
@@ -27,12 +21,15 @@ function ResCard({
         if(activeButton === "btnradio1") {
             activeProps.name = props.a.name;
             activeProps.img = props.a.img;
+            activeProps.body = props.a.body;
             } else if (activeButton === "btnradio2") {
                 activeProps.name = props.b.name;
                 activeProps.img = props.b.img;
+                activeProps.body = props.b.body;
             } else if (activeButton === "btnradio3") {
                 activeProps.name = props.c.name;
                 activeProps.img = props.c.img;
+                activeProps.body = props.c.body;
             };
 
         setToggle({...props, activeProps});
@@ -44,7 +41,7 @@ function ResCard({
         <img src={props.active.img} className="card-img-top" alt={props.active.name}></img>
         <div className="card-body">
             <h5 className="card-title">{props.active.name}</h5>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p className="card-text">{props.active.body}</p>
             
 <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
   <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autoComplete="off" onClick={handleRadioToggle}></input>
