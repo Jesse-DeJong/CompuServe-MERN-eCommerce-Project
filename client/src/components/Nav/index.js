@@ -3,6 +3,24 @@ import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 
 function Nav() {
+  
+  const styles = {
+    bar: {
+      height: '75px',
+      fontSize: '20px'
+    },
+    logo: {
+      height: '65px'
+    },
+    companyName: {
+      fontSize: '25px'
+    },
+    button: {
+      verticalAlign: 'middle',
+      fontSize: '20px',
+      paddingBottom: '7px'
+    }
+  }
 
   function showNavigation() {
     if (Auth.loggedIn()) {
@@ -20,7 +38,7 @@ function Nav() {
           </li>
         </ul>
         <form className="d-flex justify-content-end">
-          <button className="btn btn-outline-danger" type="submit" onClick={() => Auth.logout()}>Logout</button>
+          <button className="btn btn-outline-danger" type="submit" onClick={() => Auth.logout()} style={styles.button}>Logout</button>
         </form>
       
       </>
@@ -37,8 +55,8 @@ function Nav() {
           </li>
         </ul>
         <form className="d-flex justify-content-end">
-          <Link to="/signup"><button className="btn btn-outline-info" type="submit">Sign Up</button></Link>
-          <Link to="/login"><button className="btn btn-outline-success" type="submit">Login</button></Link>
+          <Link to="/signup"><button className="btn btn-outline-info" type="submit" style={styles.button}>Sign Up</button></Link>
+          <Link to="/login"><button className="btn btn-outline-success" type="submit" style={styles.button}>Login</button></Link>
         </form>
       
       </>
@@ -48,8 +66,8 @@ function Nav() {
 
   return ( <>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">StoreTitle</Link>
+      <div className="container-fluid" style={styles.bar}>
+        <Link className="navbar-brand" to="/" style={styles.companyName}><img src="/images/logo.png" alt="company logo" style={styles.logo}></img>StoreTitle</Link>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {showNavigation()}
         </div>
