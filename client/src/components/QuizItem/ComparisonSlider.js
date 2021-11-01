@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { ImgComparisonSlider } from '@img-comparison-slider/react';
 
 function ComparisonSlider({
-    props
+    props,
+    response,
+    setResponse
 }) {
-    const [slider, setSlider] = useState(0);
 
     const handleInputChange = (e) => {
-        setSlider(e.target.value)
+        setResponse(e.target.value)
     };
 
     return (
@@ -32,7 +33,7 @@ function ComparisonSlider({
                 max="100"               
             ></input>
         <div className="d-flex justify-content-center">
-            <span>{slider}%</span>
+            <span>{response}%</span>
         </div>
     </div>
     )

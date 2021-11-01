@@ -4,9 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 const Quiz = () => {
-  // Here we set two state variables for firstName and lastName using `useState`
-  const [count, setCount] = useState(0);
-  const [response, setResponse] = useState('');
   
   let initialState = {
     budget: '',
@@ -14,40 +11,50 @@ const Quiz = () => {
     fps: '',
     features: []
 };
+  
+  const [count, setCount] = useState(0);
+  const [response, setResponse] = useState('');
+  const [userData, setUserData] = useState(initialState)
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
+// Foreword
 if (count === 0) {
     setCount((count + 1));
-    initialState = {
-        ...initialState,
-        budget: response
-    }
     setResponse('');
+// Budget
 }   else if (count === 1) {
     setCount((count + 1));
-    initialState = {
-        ...initialState,
-        resolution: response
-    }
+    setUserData({
+      ...userData,
+      budget: response
+    });
     setResponse('');
+// Resolution
 }   else if (count === 2) {
     setCount((count + 1));
-    initialState = {
-        ...initialState,
-        fps: response
-    }
+    setUserData({
+      ...userData,
+      resolution: response
+    });
     setResponse('');
+// Refresh Rate
 }   else if (count === 3) {
     setCount((count + 1));
-    initialState = {
-        ...initialState,
-        features: [...response]
-    }
+    setUserData({
+      ...userData,
+      fps: response
+    });
+    setResponse('');
+}   else if (count === 4) {
+    setCount((count + 1));
+    setUserData({
+      ...userData,
+      features: [...response]
+    });
     setResponse('');
 }
-
 
 };
 
@@ -74,8 +81,8 @@ const handleBackBtn = () => {
   return (
     <div className="container d-flex justify-content-center align-items-center" style={styles.div}>
       <form className="form">
-
-        <QuizItem response={response} setResponse={setResponse} count={count} />
+      {/* <span>Count: {count}, Response: {response}</span> */}
+        <QuizItem userData={userData} response={response} setResponse={setResponse} count={count} />
 
         {/* Form Controls */}
         <div className="d-flex justify-content-end">

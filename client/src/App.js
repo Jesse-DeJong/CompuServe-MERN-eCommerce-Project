@@ -20,6 +20,7 @@ import { StoreProvider } from './state/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import Articles from './components/Articles/index';
+import Temp from './components/Recommended/Temp';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -50,6 +51,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/quiz" component={Quiz} />
+              <Route exact path="/temp" component={Temp} />
               <Route exact path="/articles" component={Articles} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/products" component={Products} />

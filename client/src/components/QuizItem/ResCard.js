@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 function ResCard({
-    props
+    props,
+    setResponse
 }) {
 
     const [toggle, setToggle] = useState(props.active);
@@ -33,6 +34,7 @@ function ResCard({
             };
 
         setToggle({...props, activeProps});
+        setResponse(activeProps.name);
 
     };
 

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 function FpsCard({
-    props
+    props,
+    response,
+    setResponse
 }) {
 
     const styles = {
@@ -10,10 +12,8 @@ function FpsCard({
         },
     };
 
-    const [fpsBar, setFpsBar] = useState(60);
-    
     const handleInputChange = (e) => {
-        setFpsBar(e.target.value)
+        setResponse(e.target.value);
     };
 
     return (
@@ -35,7 +35,7 @@ function FpsCard({
                 min="60"
                 max="240"               
             ></input>
-            <span>Desired FPS: {fpsBar}</span>
+            <span>Desired FPS: {response}</span>
             
         </div>
     </div>

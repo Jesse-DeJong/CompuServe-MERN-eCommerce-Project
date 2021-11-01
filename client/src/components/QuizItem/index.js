@@ -3,11 +3,13 @@ import ComparisonSlider from './ComparisonSlider';
 import ResCard from './ResCard';
 import FpsCard from './FpsCard';
 import { Link } from "react-router-dom";
+import Recommended from '../../pages/Recommended';
 
 function QuizItem({
     setResponse,
     response,
-    count
+    count,
+    userData
 }) {
     const handleInputChange = (e) => {
         setResponse(e.target.value)
@@ -73,7 +75,7 @@ function QuizItem({
                     <h2>At what resolution will you be gaming?</h2>
                 </div>
                 <div className="container-fluid d-flex m-2">
-                    <ResCard props={resOptions} />
+                    <ResCard props={resOptions} setResponse={setResponse} />
                 </div>
                 </>
             );
@@ -105,7 +107,7 @@ function QuizItem({
                 <>
                 <h2>At what framerate will you be gaming?</h2>
                 <div className="container-fluid d-flex">
-                    <FpsCard props={fpsOptions} />
+                    <FpsCard props={fpsOptions} response={response} setResponse={setResponse} />
                 </div>
                 </>
             );
@@ -122,10 +124,14 @@ function QuizItem({
                     
                 </div>
                 <div className="container-fluid d-flex">
-                <ComparisonSlider props={rtx} />
+                <ComparisonSlider props={rtx} response={response} setResponse={setResponse} />
                 </div>
                 </>
             );
+        case 5:
+            return (
+                <Recommended userData={userData} />
+            )
     }
 }
 
