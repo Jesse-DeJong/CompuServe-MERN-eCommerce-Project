@@ -6,6 +6,7 @@ import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
 import ArticleCard from './articleCard';
 import { UPDATE_ALL_ARTICLES } from '../../state/actions';
+import { useMediaQuery } from 'react-responsive'
 
 function Articles() {
     const [state, dispatch] = useStoreContext();
@@ -31,11 +32,15 @@ function Articles() {
         }
     }, [data, loading, dispatch]);
 
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 1000px)'
+      })
+
     return (
-        <div className="card px-1 py-1">
+        <div className="px-1 py-1">
         <h2>Articles</h2>
             {state.articles.length ? (
-                <div>{state.articles.map((article, index) => (
+                <div className="container d-flex flex-wrap">{state.articles.map((article, index) => (
                 <ArticleCard
                     key={index}
                     date={article.writtenDate}
@@ -53,63 +58,5 @@ function Articles() {
         </div>
       );
     }
-
-
-//     const { currentCategory } = state;
-  
-//     const { loading, data } = useQuery(QUERY_ALL_ARTICLES);
-  
-//     useEffect(() => {
-//       if (data) {
-//         dispatch({
-//           type: QUERY_ALL_ARTICLES,
-//           products: data.products,
-//         });
-//         data.products.forEach((product) => {
-//           idbPromise('products', 'put', product);
-//         });
-//       } else if (!loading) {
-//         idbPromise('products', 'get').then((products) => {
-//           dispatch({
-//             type: UPDATE_PRODUCTS,
-//             products: products,
-//           });
-//         });
-//       }
-//     }, [data, loading, dispatch]);
-  
-//     function filterProducts() {
-//       if (!currentCategory) {
-//         return state.products;
-//       }
-  
-//       return state.products.filter(
-//         (product) => product.category._id === currentCategory
-//       );
-//     }
-  
-//     return (
-//       <div className="my-2">
-//         <h2>Our Products:</h2>
-//         {state.products.length ? (
-//           <div className="flex-row">
-//             {filterProducts().map((product) => (
-//               <ProductItem
-//                 key={product._id}
-//                 _id={product._id}
-//                 image={product.image}
-//                 name={product.name}
-//                 price={product.price}
-//                 quantity={product.quantity}
-//               />
-//             ))}
-//           </div>
-//         ) : (
-//           <h3>You haven't added any products yet!</h3>
-//         )}
-//         {loading ? <img src={spinner} alt="loading" /> : null}
-//       </div>
-//     );
-//   }
 
 export default Articles;
