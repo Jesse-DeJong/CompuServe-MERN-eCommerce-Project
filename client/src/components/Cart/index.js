@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
+import { Link } from "react-router-dom";
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../gql/queries';
 import { idbPromise } from '../../utils/helpers';
@@ -7,6 +8,8 @@ import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../state/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../state/actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
 import './style.css';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -61,12 +64,16 @@ const Cart = () => {
   }
 
   if (!state.cartOpen) {
-    return (
-      <div className="cart-closed" onClick={toggleCart}>
-        <span role="img" aria-label="trash">
-          🛒
-        </span>
+    return ( <>
+      <div className="cart-closed">
+        <FontAwesomeIcon 
+          role="img"
+          aria-label="cart"
+          onClick={toggleCart} 
+          icon={faShoppingBasket}
+        ></FontAwesomeIcon>
       </div>
+      </>
     );
   }
 
@@ -86,19 +93,18 @@ const Cart = () => {
             <strong>Total: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <button onClick={submitCheckout} className="btn btn-outline-success">Checkout</button>
             ) : (
               <span>(log in to check out)</span>
             )}
           </div>
         </div>
-      ) : (
+      ) : ( <>
         <h3>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
-          You haven't added anything to your cart yet!
+          Your Shopping Cart is empty.
         </h3>
+        <Link to="/products"><button className="btn btn-outline-info">Start Shopping</button></Link>
+      </>
       )}
     </div>
   );

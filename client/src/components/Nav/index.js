@@ -18,7 +18,8 @@ function Nav() {
     button: {
       verticalAlign: 'middle',
       fontSize: '20px',
-      paddingBottom: '7px'
+      paddingBottom: '7px',
+      marginLeft: '5px'
     }
   }
 

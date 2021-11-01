@@ -15,7 +15,7 @@ function ArticleCard({
   <div className="card-body">
     <h5 className="card-title">{heading}</h5>
     <p className="card-text">{synopsis}</p>
-    <Link to="/" className="btn btn-primary">Go somewhere</Link>
+    <Link to="/" className="btn btn-primary">Read Article</Link>
   </div>
 </div>
         </>

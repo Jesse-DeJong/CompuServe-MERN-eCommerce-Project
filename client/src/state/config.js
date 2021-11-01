@@ -4,7 +4,7 @@ const initialState = {
   cartOpen: false,
   categories: [],
   currentCategory: '',
-  theme: 'light',
+  theme: 'dark',
   greeting: 'hello',
   articles: []
 };
