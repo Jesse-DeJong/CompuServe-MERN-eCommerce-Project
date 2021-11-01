@@ -4,14 +4,36 @@ import { ImgComparisonSlider } from '@img-comparison-slider/react';
 function ComparisonSlider({
     props
 }) {
+    const [slider, setSlider] = useState(0);
+
+    const handleInputChange = (e) => {
+        setSlider(e.target.value)
+    };
+
     return (
     <div>
         <ImgComparisonSlider>
-          <img slot="first" src="https://img-comparison-slider.sneas.io/demo/images/before.webp" />
-          <img slot="second" src="https://img-comparison-slider.sneas.io/demo/images/after.webp" />
+          <img slot="first" src={props.off} />
+          <img slot="second" src={props.on} />
         </ImgComparisonSlider>
-        <label htmlFor="customRange1" className="form-label">Importance</label>
-        <input type="range" className="form-range" id="customRange1"></input>
+        <div className="d-flex justify-content-center">
+            <label 
+                htmlFor="customRange1" 
+                className="form-label"
+                >Importance
+            </label>
+        </div>
+            <input 
+                type="range" 
+                className="form-range"  
+                id="customRange1"
+                onChange={handleInputChange}
+                min="0"
+                max="100"               
+            ></input>
+        <div className="d-flex justify-content-center">
+            <span>{slider}%</span>
+        </div>
     </div>
     )
 }

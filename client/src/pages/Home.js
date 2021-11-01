@@ -24,8 +24,8 @@ const Home = () => {
     <div className="container">
           <h1 className="container d-flex justify-content-center">Getting Started</h1>
       <div>
-          <p style={styles.p}>Buying or building a new computer can be a daunting process for a newcomer and with so many fresh features being pushed on the consumerspace knowing which matter to you can be a huge pain for both head and wallet.</p>
-          <p style={styles.p}>To make navigating this landscape easier complete this short quiz so we know what your intended use case is and how we can best recommend a system or components to compliment it.</p>
+          <p style={styles.p}>Buying or building a new computer can be a daunting process even for veterans of the hobby. With so many fresh features emerging in recent years knowing which matter to you can be tough.</p>
+          <p style={styles.p}>To make navigating this landscape easier we've created this short quiz so we can get to know what your intended use case is and how we can best recommend a system or components to compliment it.</p>
           
         <div className="container d-flex justify-content-center">
           <Link to='/quiz'><button 
