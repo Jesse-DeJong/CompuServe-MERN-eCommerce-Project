@@ -24,7 +24,7 @@ function ArticleCard({
   
 
     return ( <>
-<div className="card mx-2" style={styles.card}>
+<div className="card m-2" style={styles.card}>
   <img 
   src="https://picsum.photos/200" 
   className="card-img-top" 

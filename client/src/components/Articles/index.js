@@ -38,9 +38,12 @@ function Articles() {
 
     return (
         <div className="px-1 py-1">
-        <h2>Articles</h2>
+            <div>
+                <h2>Dive Deeper...</h2>
+                <p>We'd recommend reading some of these articles if you'd like a better understanding of some of the features and technologies available today to help decide which are worth the investment cost for you.</p>
+            </div>
             {state.articles.length ? (
-                <div className="container d-flex flex-wrap">{state.articles.map((article, index) => (
+                <div className="container d-flex flex-wrap justify-content-center">{state.articles.map((article, index) => (
                 <ArticleCard
                     key={index}
                     date={article.writtenDate}
