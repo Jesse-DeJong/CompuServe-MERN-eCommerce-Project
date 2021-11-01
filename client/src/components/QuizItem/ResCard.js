@@ -5,7 +5,7 @@ function ResCard({
     setResponse
 }) {
 
-    const [toggle, setToggle] = useState(props.active);
+    const [toggle, setToggle] = useState(props);
 
     const styles = {
         card: {
@@ -40,10 +40,10 @@ function ResCard({
 
     return (
     <div className="card" style={styles.card}>
-        <img src={props.active.img} className="card-img-top" alt={props.active.name}></img>
+        <img src={toggle.active.img} className="card-img-top" alt={toggle.active.name}></img>
         <div className="card-body">
-            <h5 className="card-title">{props.active.name}</h5>
-            <p className="card-text">{props.active.body}</p>
+            <h5 className="card-title">{toggle.active.name}</h5>
+            <p className="card-text">{toggle.active.body}</p>
             
 <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
   <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autoComplete="off" onClick={handleRadioToggle}></input>
