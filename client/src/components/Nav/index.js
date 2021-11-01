@@ -72,7 +72,7 @@ function Nav() {
   return ( <>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid" style={styles.bar}>
-        <Link className="navbar-brand" to="/" style={styles.companyName}><img src="/images/logo.png" alt="company logo" style={styles.logo}></img>StoreTitle</Link>
+        <Link className="navbar-brand" to="/" style={styles.companyName}><img src="/images/logo.png" alt="company logo" style={styles.logo}></img>CompuServe</Link>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {showNavigation()}
         </div>

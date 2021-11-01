@@ -36,28 +36,30 @@ function Signup(props) {
 
       <h2>Signup</h2>
       <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
+
+      <div class="form-floating mb-3">
+            <input 
+              type="email"
+              onChange={handleChange}
+              className="form-control" 
+              id="email" 
+              placeholder="name@example.com"
+            ></input>
+            <label for="email">Email Address:</label>
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
+        <div class="form-floating mb-3">
+            <input 
+              type="password"
+              onChange={handleChange}
+              className="form-control" 
+              id="pwd" 
+              placeholder="name@example.com"
+            ></input>
+            <label for="pwd">Password:</label>
         </div>
+
         <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+          <button className="btn btn-outline-warning" type="submit">Submit</button>
         </div>
       </form>
     </div>
