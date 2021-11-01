@@ -41,20 +41,31 @@ function CategoryMenu() {
     });
   };
 
-  return (
+  return ( <>
     <div>
-      <h2>Choose a Category:</h2>
-      {categories.map((item) => (
-        <button
-          key={item._id}
-          onClick={() => {
-            handleClick(item._id);
-          }}
-        >
-          {item.name}
-        </button>
-      ))}
+      <h2>Filter by Category:</h2>
+      <div className="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+        {categories.map((item, index) => ( <>
+  <label 
+  className="btn btn-outline-dark" 
+  htmlFor={item._id}>
+    {item.name}</label>
+  <input 
+  key={item._id}
+  onClick={() => {handleClick(item._id);}}
+  type="checkbox" 
+  className="btn-check" 
+  id={item._id} 
+  autoComplete="off"
+  style={{}}
+  ></input>
+        </> ))}
+        
+
+</div>
+
     </div>
+    </>
   );
 }
 

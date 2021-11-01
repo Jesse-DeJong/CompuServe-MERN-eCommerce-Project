@@ -35,6 +35,15 @@ db.once('open', async () => {
       quantity: 500
       },
       {
+        name: 'PCCG Inferno 6600 Gaming System',
+        description:
+          'AMD Ryzen 5 5600X CPU with Wraith Stealth cooler, ASUS Prime B550M-A Motherboard, PowerColor Radeon RX 6600 Hellhound 8GB RDNA 2 graphics card, 16GB Team T-Force Delta RGB 3600MHz memory, 512GB PNY CS1030 M.2 NVMe SSD, 2TB Seagate Barracuda hard drive, Kolink Citadel Glass SE ARGB mATX Gaming Case Black, Windows 10. Backed by a 2 year return to base warranty with all shipping costs included (upgradeable to 3 years).',
+        image: '6600.jpg',
+        category: categories[2]._id,
+        price: 2299,
+        quantity: 40
+      },
+      {
       name: 'PCCG Ghost 3060 Ti Gaming System',
       description:
         'AMD Ryzen 5 5600X CPU with Wraith Stealth, ASUS Prime B550M-K Motherboard, ASUS GeForce RTX 3060 Ti Dual Mini OC LHR GB graphics card, 16GB PNY XLR8 Gaming Epic-X RGB 3600MHz memory, 512GB Team MP34 M.2 NVMe SSD, 2TB Seagate Barracuda hard drive, Lian Li Lancool 215 Mesh A-RGB Case Black, Windows 10. Backed by a 2 year return to base warranty with all shipping costs included (upgradeable to 3 years).',
@@ -42,24 +51,6 @@ db.once('open', async () => {
       category: categories[2]._id,
       price: 2899,
       quantity: 500
-      },
-      {
-      name: 'PCCG Hotline 3080 Ti Gaming System',
-      description:
-        'AMD Ryzen 9 5950X CPU cooled by the Phanteks Glacier One 280MP Liquid Cooler, MSI MAG X570S Tomahawk Max Wi-Fi Motherboard, MSI GeForce RTX 3080 Ti Suprim X 12GB graphics card, 32GB Corsair Vengeance RGB Pro 3600MHz memory, 2TB PNY CS3040 M.2 NVMe Gen4 SSD, 2TB Samsung 870 QVO SATA SSD, Phanteks Enthoo Evolv X D-RGB Tempered Glass ATX Black case, Windows 10. Backed by a 2-year return to base warranty with all shipping costs included (upgradeable to 3 years).',
-      image: '3080ti.jpg',
-      category: categories[3]._id,
-      price: 6999,
-      quantity: 123
-      },
-      {
-        name: 'PCCG Epic 3080 Gaming System',
-        description: 
-          'AMD Ryzen 9 5900X CPU cooled by the Cooler Master MasterLiquid MLR240R ARGB AIO Liquid CPU Cooler, ASUS ROG Strix B550-F Gaming Wi-Fi Motherboard, ASUS GeForce RTX 3080 TUF Gaming OC 10GB graphics card, 32GB Corsair Vengeance RGB Pro 3600MHz memory, 2TB PNY CS3040 M.2 NVMe Gen4 SSD, 2TB Seagate Barracuda hard drive, Phanteks Eclipse P500A Airflow D-RGB Tempered Glass Black Case, Windows 10. Backed by a 2 year return to base warranty with all shipping costs included (upgradeable to 3 years). *Previous configuration shown in image, new images coming soon!',
-        image: '3080.jpg',
-        category: categories[3]._id,
-        price: 5699,
-        quantity: 99
       },
       {
         name: 'PCCG Devil 6800 XT Gaming System',
@@ -71,16 +62,25 @@ db.once('open', async () => {
         quantity: 80
       },
       {
-        name: 'PCCG Inferno 6600 Gaming System',
+        name: 'PCCG Epic 3080 Gaming System',
+        description: 
+          'AMD Ryzen 9 5900X CPU cooled by the Cooler Master MasterLiquid MLR240R ARGB AIO Liquid CPU Cooler, ASUS ROG Strix B550-F Gaming Wi-Fi Motherboard, ASUS GeForce RTX 3080 TUF Gaming OC 10GB graphics card, 32GB Corsair Vengeance RGB Pro 3600MHz memory, 2TB PNY CS3040 M.2 NVMe Gen4 SSD, 2TB Seagate Barracuda hard drive, Phanteks Eclipse P500A Airflow D-RGB Tempered Glass Black Case, Windows 10. Backed by a 2 year return to base warranty with all shipping costs included (upgradeable to 3 years). *Previous configuration shown in image, new images coming soon!',
+        image: '3080.jpg',
+        category: categories[3]._id,
+        price: 5699,
+        quantity: 99
+      },
+      {
+        name: 'PCCG Hotline 3080 Ti Gaming System',
         description:
-          'AMD Ryzen 5 5600X CPU with Wraith Stealth cooler, ASUS Prime B550M-A Motherboard, PowerColor Radeon RX 6600 Hellhound 8GB RDNA 2 graphics card, 16GB Team T-Force Delta RGB 3600MHz memory, 512GB PNY CS1030 M.2 NVMe SSD, 2TB Seagate Barracuda hard drive, Kolink Citadel Glass SE ARGB mATX Gaming Case Black, Windows 10. Backed by a 2 year return to base warranty with all shipping costs included (upgradeable to 3 years).',
-        image: '6600.jpg',
-        category: categories[2]._id,
-        price: 2299,
-        quantity: 40
-      }
+          'AMD Ryzen 9 5950X CPU cooled by the Phanteks Glacier One 280MP Liquid Cooler, MSI MAG X570S Tomahawk Max Wi-Fi Motherboard, MSI GeForce RTX 3080 Ti Suprim X 12GB graphics card, 32GB Corsair Vengeance RGB Pro 3600MHz memory, 2TB PNY CS3040 M.2 NVMe Gen4 SSD, 2TB Samsung 870 QVO SATA SSD, Phanteks Enthoo Evolv X D-RGB Tempered Glass ATX Black case, Windows 10. Backed by a 2-year return to base warranty with all shipping costs included (upgradeable to 3 years).',
+        image: '3080ti.jpg',
+        category: categories[3]._id,
+        price: 6999,
+        quantity: 123
+        }
     ]
-  )
+)
 
   console.log('Products Seeded');
 
@@ -140,7 +140,7 @@ db.once('open', async () => {
     password: 'password12345',
     orders: [
       {
-        products: [products[0]._id, products[0]._id, products[1]._id]
+        products: [products[6]._id, products[0]._id, products[1]._id]
       }
     ]
   });
