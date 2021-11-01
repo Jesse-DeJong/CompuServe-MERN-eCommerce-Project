@@ -58,6 +58,9 @@ function Nav() {
           <li className="nav-item">
             <Link className="nav-link" aria-current="Products" to="/products">Products</Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" aria-current="Articles" to="/articles">Articles</Link>
+          </li>
         </ul>
         <form className="d-flex justify-content-end">
           <Link to="/signup"><button className="btn btn-outline-info" type="submit" style={styles.button}>Sign Up</button></Link>
