@@ -5,26 +5,29 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 const Quiz = () => {
   
+  // Quiz Logic Initial Object
   let initialState = {
     budget: '',
     resolution: '',
     fps: '',
     features: []
-};
-  
-  const [count, setCount] = useState(0);
-  const [response, setResponse] = useState('');
-  const [userData, setUserData] = useState(initialState)
+  };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+// Initialise State
+const [count, setCount] = useState(0);
+const [response, setResponse] = useState('');
+const [userData, setUserData] = useState(initialState)
+
+// Form Submission Logic
+const handleFormSubmit = (e) => {
+  e.preventDefault();
 
 // Foreword
 if (count === 0) {
     setCount((count + 1));
     setResponse('');
 // Budget
-}   else if (count === 1) {
+} else if (count === 1) {
     setCount((count + 1));
     setUserData({
       ...userData,
@@ -54,36 +57,39 @@ if (count === 0) {
       features: [...response]
     });
     setResponse('');
-}
-
+  }
 };
 
+// State handler to manage quiz position logic
 const handleBackBtn = () => {
   setCount((count - 1));
-}
+};
 
-  // less 75 pixels to compensate for the navbar
-  const windowHeight = document.documentElement.clientHeight - 75;
-  
-  const styles = {
-    button: {
-      fontSize: '20px',
-      paddingBottom: '7px'
-    },
-    div: {
-      height: windowHeight
-    },
-    p: {
-      textAlign: 'center'
-    }
+// less 75 pixels to compensate for the navbar
+const windowHeight = document.documentElement.clientHeight - 75;
+
+const styles = {
+  button: {
+    fontSize: '20px',
+    paddingBottom: '7px'
+  },
+  div: {
+    height: windowHeight
+  },
+  p: {
+    textAlign: 'center'
   }
+};
 
-  return (
+return (
     <div className="container d-flex justify-content-center align-items-center" style={styles.div}>
       <form className="form">
-      {/* <span>Count: {count}, Response: {response}</span> */}
-        <QuizItem userData={userData} response={response} setResponse={setResponse} count={count} />
-
+        <QuizItem 
+          userData={userData} 
+          response={response} 
+          setResponse={setResponse} 
+          count={count} 
+        />
         {/* Form Controls */}
         <div className="d-flex justify-content-end">
           {/* Ternery to prevent back button showing when at the start */}
@@ -98,28 +104,27 @@ const handleBackBtn = () => {
                       role="button"
                       aria-label="back" 
                       icon={faChevronLeft}
-                  ></FontAwesomeIcon>
+                  >
+                  </FontAwesomeIcon>
                   </button>
           ) : (false)}
-
-        <button 
-        className="btn btn-outline-warning"
-        type="button" 
-        onClick={handleFormSubmit}
-        style={styles.button}
-        >
-        <FontAwesomeIcon
-          role="button"
-          aria-label="back" 
-          icon={faChevronRight}
-        ></FontAwesomeIcon>
-        </button>
+          <button 
+          className="btn btn-outline-warning"
+          type="button" 
+          onClick={handleFormSubmit}
+          style={styles.button}
+          >
+          <FontAwesomeIcon
+            role="button"
+            aria-label="back" 
+            icon={faChevronRight}
+          >
+          </FontAwesomeIcon>
+          </button>
         </div>
-
       </form>
     </div>
   );
-}
-
+};
 
 export default Quiz;

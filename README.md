@@ -21,6 +21,7 @@ The site is live at `https://compuserve.herokuapp.com/`
 
 - Refined use case test and recommendation system
 - Populate seed data with genuine products and articles
+- Feature: PC configurer with prefilled parts for recommended templates
 - Overhaul products/store section to expand usablility and feature set
 - Overhaul UI
 - Refactor code to clean it up and make common elements more consistent and in many instances accessed via react-components external to their file
